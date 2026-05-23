@@ -1,0 +1,101 @@
+# ============================================================
+# .gitignore — vcf-variant-filtering-demo
+# ============================================================
+
+# ── SECRETS & CREDENTIALS (never commit) ────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+secrets/
+credentials/
+token.json
+*_secret.json
+service_account*.json
+*_credentials*
+*_token*
+
+# ── GENOMIC DATA (PHI / sensitive) ────────────────────────
+# VCF, BAM, CRAM, FASTQ files may contain patient data.
+# Only anonymized / synthetic sample data belongs in source control.
+data/*.vcf
+data/*.vcf.gz
+data/*.bcf
+data/*.bam
+data/*.cram
+data/*.fastq
+data/*.fastq.gz
+data/*.fq
+data/*.fq.gz
+!data/sample.vcf       # synthetic demo sample only
+results/
+*.log
+
+# ── Python ───────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+PIPFILE.lock
+
+# ── Virtual environments ────────────────────────────────
+.venv
+venv/
+env/
+ENV/
+.env.local
+.env.development
+.env.test
+.env.production
+
+# ── Testing & coverage ─────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.cover
+.hypothesis/
+
+# ── Jupyter ─────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── IDEs & editors ────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Distribution / CI artifacts ──────────────────────────
+dist/
+build/
+*.tar.gz
+*.whl
+site/
+docs/_build/
